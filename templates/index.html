@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>🥝Fresh News🥝</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}
+    index
+{% endblock %}
+
+{% block content %}
+    <ul class="navigation_bar">
+        <li class="app_title">
+            <img src="static/images/icon.png" alt="icon">
+            Manager Task
+        </li>
+        <li>
+            <button>
+                <img src="static/images/tasks.png" alt="tasks">
+                Задачи
+            </button>
+        </li>
+        <li>
+            <button>
+                <img src="static/images/chat.png" alt="chat">
+                Чат
+            </button>
+        </li>
+        <li>
+            <button>
+                <img src="static/images/workers.png" alt="workers">
+                Сотрудники
+            </button>
+        </li>
+        <li>
+            <button>
+                <img src="static/images/calendar.png" alt="calendar">
+                Календарь
+            </button>
+        </li>
+        <li>
+            <button>
+                <img src="static/images/profile.png" alt="profile">
+                Фамилия Имя
+            </button>
+        </li>
+    </ul>
+    <ul class="tasks_list">
+        {% for task in tasks %}
+            <li class="task">
+                <div class="image"><img src="static/images/profile_icon.png" alt="profile image"></div>
+                <div class="name">{{ task.name }}</div>
+                <div class="text">{{ task.text }}</div>
+                <div class="date">{{ task.date }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
