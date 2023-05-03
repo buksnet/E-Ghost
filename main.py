@@ -16,11 +16,12 @@ class TaskModel(db.Model):
     text = db.Column(db.String(1000), unique=False)
     created_at = db.Column(db.DateTime, default=datetime.now)
 
+
 @app.route("/")
 def index():
     task_list = TaskModel.query.all()
     return render_template(
-        "index.html",
+        "base.html",
         task_list=task_list
     )
 
@@ -29,12 +30,9 @@ def index():
 def task():
     task = TaskModel.query.get(id)
     return render_template(
-        "index.html",
+        "base.html",
         task=task
     )
-
-
-
 
 
 if __name__ == '__main__':
