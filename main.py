@@ -21,7 +21,7 @@ def index():
     task_list = TaskModel.query.all()
     return render_template(
         "index.html",
-        task_list=task_list
+        tasks=task_list
     )
 
 
