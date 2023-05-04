@@ -1,4 +1,4 @@
-button {
+form button {
     display: flex;
     align-items: center;
     width: 322px;
@@ -6,19 +6,18 @@ button {
     margin-bottom: 10px;
     background-color: #f3f3fb;
     border-radius: 18px;
-    font-family: 'Sen', sans-serif;
-    font-style: normal;
+    font-family: 'Sen';
     font-weight: 400;
     font-size: 25px;
     line-height: 30px;
     color: #686868;
 }
 
-button:hover {
+form button:hover {
     color: #4654eb;
 }
 
-button img {
+form img {
     margin-right: 26px;
     width: 45px;
     height: 45px;
@@ -29,8 +28,7 @@ button img {
     align-items: center;
     width: 322px;
     height: 68px;
-    font-family: 'Sen', sans-serif;
-    font-style: normal;
+    font-family: 'Sen';
     font-weight: 400;
     font-size: 26px;
     line-height: 31px;
@@ -43,20 +41,71 @@ button img {
     height: 75px;
 }
 
-ul {
+.navbar {
     list-style: none;
     margin-top: 62px;
     padding-left: 56px;
 }
 
-li:nth-child(2) {
+.navbar li:nth-of-type(2) {
     margin-top: 91px;
 }
 
-li:nth-child(6) button {
+.navbar li:nth-of-type(6) button {
     color: #000000;
 }
 
-li:nth-child(6) button:hover {
+.navbar li:nth-of-type(6) button:hover {
     color: #4654eb;
+}
+
+.tasks_list {
+    width: 1400px;
+    height: 820px;
+    margin-top: -415px;
+    margin-left: 457px;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 20px;
+    width: 1385px;
+    height: 68px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    font-family: 'Sen';
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.task:hover {
+    color: #ffffff;
+    background: #4654EB;
+}
+
+.image img {
+    height: 44px;
+    width: 44px;
+    margin-right: 19px;
+}
+
+.name {
+    width: 148px;
+    margin-left: 23px;
+}
+
+.text {
+    width: 642px;
+    margin-left: 103px;
+}
+
+.date {
+    width: 56px;
+    margin-left: 201px;
 }

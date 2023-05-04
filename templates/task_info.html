@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Задача
+{% endblock %}
+
+{% block content %}
+  <h1>Задача</h1>
+  <p> {{ task["name"] }} </p>
+  <p> {{ task["text"] }} </p>
+  {% if date.today() > task["compose_up"] %}
+    <p>проёб номер {{ task["id"] }} (нужно было сделать до {{ task["compose_up"] }})</p>
+  {% else %}
+    <p> Сделать до {{ task["compose_up"] }} </p>
+  {% endif %}
+
+  <a href="/task/{{ task.id }}/del">Удалить</a>
+{% endblock %}
