@@ -1,0 +1,191 @@
+html,
+body {
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    width: 99%;
+    height: 99%;
+
+}
+
+.wrapper {
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    float:right;
+    background-color: #F3F3FB;
+    width: 75%;
+    height: 100%;
+    border-radius: 66px;
+}
+
+.search {
+    display: flex;
+    width: 15%;
+    height: 5%;
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+.search img {
+    width: 41px;
+    height: 41px;
+}
+
+.search input {
+    height: 50%;
+    margin-top: 5%;
+    background-color: #F3F3FB;
+    border:none;
+}
+
+.navbar {
+    width: 25%;
+    height: 100%;
+    list-style-type: none;
+    margin-top: 62px;
+    padding-left: 56px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 68px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 18px;
+    font-family: 'Sen';
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #686868;
+    border:none;
+}
+
+button:hover {
+    color: #4654eb;
+    background-color: #F3F3FB;
+    border:2px;
+    border-color: black;
+}
+
+
+
+.app_title {
+    display: flex;
+    align-items: center;
+    width: 322px;
+    height: 68px;
+    font-family: 'Sen';
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+}
+
+.navbar li:nth-of-type(2) {
+    margin-top: 91px;
+}
+
+
+button img {
+    margin-right: 26px;
+    width: 45px;
+    height: 45px;
+}
+
+.circle{
+    background-color: #4654eb;
+    height: 115%;
+    width: 25%;
+    border-radius: 50%;
+    margin-right:10%
+}
+.circle img {
+    height: 65%;
+    margin-left:17%;
+    margin-top:14%
+}
+
+.navbar li:nth-of-type(6) button {
+    color: #000000;
+}
+
+.tasks_list {
+    width: 1000px;
+    height: 600px;
+    margin-top: 133px;
+    margin-left: 45px;
+    list-style: none;
+    white-space: nowrap;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+
+
+.text {
+    width: 500px;
+    margin-left: 50px;
+}
+
+.date {
+    width: 130px;
+    margin-left: 0px;
+    white-space: nowrap
+}
+
+.add_task {
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+}
+
+.add_task,
+.task_detail,
+.registration {
+    margin-top: 60px;
+    margin-left: 60px;
+    text-align: left;
+}
+
+input {
+    text-align: left;
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    border: none;
+    border-bottom: 2px solid #4654EB;
+    background: none;
+}
+
+.task_text {
+    margin-left: 0px;
+}
+
+.task_submit {
+    margin-top: 20px;
+}
+
+.add_task span {
+  color: #8a272a;
+  margin-left: 270px;
+  white-space: nowrap
+}

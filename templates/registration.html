@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block content %}
-  <p>Регистрация</p>
+<div class="registration">
+  <h1>Регистрация</h1>
+  <hr>
   {% for flash in get_flashed_messages() %}
     <span> {{ flash }} </span>
   {% endfor %}
@@ -18,7 +20,7 @@
         {{ form.login(class="form-control") }}
       </div>
       {% for error in form.login.errors %}
-        <div class="alert alert-danger" role="alert">
+        <div class="task_alert" role="alert">
           <span>{{ error }}</span>
         </div>
       {% endfor %}
@@ -30,11 +32,14 @@
         {{ form.password(class="form-control") }}
       </div>
       {% for error in form.password.errors %}
-        <div class="alert alert-danger" role="alert">
+        <div class="task_alert" role="alert">
           <span>{{ error }}</span>
         </div>
       {% endfor %}
-    {{ form.submit(class="btn btn-primary btn-lg") }}
+    <div class="task_submit">
+      {{ form.submit(class="btn btn-primary btn-lg") }}
+    </div>
     <a href="/login">Войти</a>
   </form>
+</div>
 {% endblock %}

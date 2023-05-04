@@ -5,46 +5,51 @@
 {% endblock %}
 
 {% block content %}
+<div class="add_task">
   <h1>Добавить задачу</h1>
   <hr>
   <form method="POST" action="" novalidate>
     {{ form.csrf_token }}
-      <div class="form-group">
-        <label >
+      <div class="task_submit">
+        <label>
           {{ form.name.label }}
         </label>
         {{ form.name(class="form-control") }}
+        {% for error in form.name.errors %}
+          <div class="task_alert" role="alert">
+            <span>{{ error }}</span>
+          </div>
+        {% endfor %}
       </div>
-      {% for error in form.name.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
-        </div>
-      {% endfor %}
 
-      <div class="form-group">
-        <label >
+      <div class="task_submit">
+        <label>
           {{ form.text.label }}
         </label>
         {{ form.text(class="form-control") }}
+        {% for error in form.text.errors %}
+          <div class="task_alert" role="alert">
+            <span>{{ error }}</span>
+          </div>
+        {% endfor %}
       </div>
-      {% for error in form.text.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
-        </div>
-      {% endfor %}
 
-      <div class="form-group">
+      <div class="task_submit">
         <label>
           {{ form.date.label }}
         </label>
         {{ form.date }}
+        {% for error in form.date.errors %}
+          <div class="task_alert" role="alert">
+            <span>{{ error }}</span>
+          </div>
+        {% endfor %}
       </div>
-      {% for error in form.date.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
-        </div>
-      {% endfor %}
 
-    {{ form.submit(class="btn btn-primary btn-lg") }}
+    <div class="task_submit">
+      {{ form.submit(class="btn btn-primary btn-lg") }}
+    </div>
+
   </form>
+</div>
 {% endblock %}

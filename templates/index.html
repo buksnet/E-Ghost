@@ -5,60 +5,17 @@
 {% endblock %}
 
 {% block content %}
-    <ul class="navbar">
-        <li class="app_title">
-            <div class="circle">
-                <img src="static/images/profile.png" alt="profile">
-            </div>
-        </li>
-        <li>
-            <form action="/add_task" method="GET">
-                <button type="submit">
-                    <img src="static/images/tasks.png" alt="tasks">
-                    Добавить задачу
-                </button>
-            </form>
-        </li>
-        <li>
-            <form action="/" method="GET">
-                <button type="submit">
-                    <img src="static/images/chat.png" alt="tasks">
-                    Главное меню
-                </button>
-            </form>
-        </li>
-        <li>
-            <form action="/workers" method="GET">
-                <button type="submit">
-                    <img src="static/images/workers.png" alt="tasks">
-                    Сотрудники
-                </button>
-            </form>
-        </li>
-        <li>
-            <form action="/calendar" method="GET">
-                <button type="submit">
-                    <img src="static/images/calendar.png" alt="tasks">
-                    Календарь
-                </button>
-            </form>
-        </li>
-        <li>
-            <form action="/logout" method="GET">
-                <button type="submit">
-                    <img src="static/images/profile.png" alt="tasks">
-                    Выйти
-                </button>
-            </form>
-        </li>
-    </ul>
     <ul class="tasks_list">
         {% for task in tasks %}
             <li class="task">
-                <div class="image"><img src="static/images/profile_icon.png" alt="profile image"></div>
-                <div class="name">{{ task.name }}</div>
-                <div class="text">{{ task.text }}</div>
-                <div class="date">{{ task.date }}</div>
+                <form action="/task/{{task.id}}">
+                    <button type="submit">
+                        <div class="image"><img src="static/images/profile_icon.png" alt="profile image"></div>
+                        <div class="name">{{ task.name }}</div>
+                        <div class="text">{{ task.text|truncate(10) }}</div>
+                        <div class="date">{{ task.date }}</div>
+                    </button>
+                </form>
             </li>
         {% endfor %}
     </ul>
