@@ -4,7 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DateField, PasswordField
 from wtforms.validators import Length, DataRequired
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_user, login_required, UserMixin
+from flask_login import LoginManager, login_user, login_required, UserMixin, logout_user
 
 app = Flask(__name__, template_folder="templates")
 app.config['SECRET_KEY'] = 'LATER'
@@ -146,7 +146,14 @@ def registration():
     return render_template('registration.html', form=form)
 
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect("/login")
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
