@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Задача
+{% endblock %}
+
+{% block content %}
+<ul class="navbar">
+  <h1>Задача</h1>
+  <p> {{ task["name"] }} </p>
+  <p> {{ task["text"] }} </p>
+  {% if date.today() > task["date"] %}
+    <p>время вышло (нужно было сделать до {{ task["date"] }})</p>
+  {% else %}
+    <p> Сделать до {{ task["date"] }} </p>
+  {% endif %}
+  <a href="/task/{{ task.id }}/del">Удалить</a>
+</ul>
+{% endblock %}

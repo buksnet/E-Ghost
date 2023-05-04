@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<ul class="navbar">
+  <p>Регистрация</p>
+  {% for flash in get_flashed_messages() %}
+    <span> {{ flash }} </span>
+  {% endfor %}
+  <form action="" method="post">
+    {{ form.csrf_token }}
+      <div class="form-group">
+        <label>
+          {{ form.login.label }}
+        </label>
+        {{ form.login(class="form-control") }}
+      </div>
+      {% for error in form.login.errors %}
+        <div class="alert alert-danger" role="alert">
+          <span>{{ error }}</span>
+        </div>
+      {% endfor %}
+
+      <div class="form-group">
+        <label>
+          {{ form.password.label }}
+        </label>
+        {{ form.password(class="form-control") }}
+      </div>
+      {% for error in form.password.errors %}
+        <div class="alert alert-danger" role="alert">
+          <span>{{ error }}</span>
+        </div>
+      {% endfor %}
+    {{ form.submit(class="btn btn-primary btn-lg") }}
+    <a href="/login">Войти</a>
+  </form>
+</ul>
+{% endblock %}
