@@ -34,18 +34,18 @@ class UserModel(db.Model, UserMixin):
 class TaskForm(FlaskForm):
     name = StringField(
         'Название',
-        validators=[DataRequired(message="Поле не 'Название' должно быть пустым"),
+        validators=[DataRequired(message="Поле не должно быть пустым"),
                     Length(max=255, message='Введите название задачи длиной до 255 символов')]
     )
     text = StringField(
         'Текст',
-        validators=[DataRequired(message="Поле не 'Текст' должно быть пустым"),
+        validators=[DataRequired(message="Поле не должно быть пустым"),
                     Length(max=1000, message='Введите описание задачи длиной до 1000 символов')])
 
     date = DateField(
         'Закончить до',
         format="%Y-%m-%d",
-        validators=[DataRequired(message="Поле 'Закончить до' не должно быть пустым")]
+        validators=[DataRequired(message="Поле не должно быть пустым")]
     )
     submit = SubmitField('Добавить')
 
@@ -53,13 +53,13 @@ class TaskForm(FlaskForm):
 class RegisterForm(FlaskForm):
     login = StringField(
         'Логин',
-        validators=[DataRequired(message="Поле не 'Логин' должно быть пустым"),
+        validators=[DataRequired(message="Поле не должно быть пустым"),
                     Length(max=30, message='Введите логин длиной до 30 символов')]
     )
 
     password = PasswordField(
         'Пароль',
-        validators=[DataRequired(message="Поле не 'Пароль' должно быть пустым"),
+        validators=[DataRequired(message="Поле не должно быть пустым"),
                     Length(max=30, min=6, message='Введите Пароль от 6 до 30 символов')])
 
     submit = SubmitField('Продолжить')
