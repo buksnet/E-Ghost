@@ -77,7 +77,12 @@ def index():
     return render_template("index.html", tasks=task_list)
 
 
-@app.route("/task/<int:id>")
+@app.errorhandler(404)
+def not_found(e):
+    return redirect("/")
+
+
+@app.route("/task/<int:id>", methods=['GET', 'POST'])
 @login_required
 def task_info(id):
     task = TaskModel.query.get(id)
@@ -108,7 +113,7 @@ def add_task():
         db.session.add(task)
         db.session.commit()
         return render_template(
-            "add_task.html",
+            "task_info.html",
             task=task, date=date
         )
 
