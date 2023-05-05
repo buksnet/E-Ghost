@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/static.css">
+    <title>👻E-Ghost</title>
+</head>
+
+<body>
+    <div class="wrapper">
+    {% include "navigation.html" %}
+        <div class="container">
+            <div class="line"></div>
+            <div class="columns">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
