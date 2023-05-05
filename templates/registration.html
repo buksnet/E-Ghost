@@ -8,9 +8,6 @@
 <div class="registration">
   <h1>Регистрация</h1>
   <hr>
-  {% for flash in get_flashed_messages() %}
-    <span> {{ flash }} </span>
-  {% endfor %}
   <form action="" method="post">
     {{ form.csrf_token }}
       <div class="form-group">
@@ -36,10 +33,15 @@
           <span>{{ error }}</span>
         </div>
       {% endfor %}
-    <div class="task_submit">
-      {{ form.submit(class="btn btn-primary btn-lg") }}
+    <div class="message">
+        {% for flash in get_flashed_messages() %}
+          <span> {{ flash }} </span>
+        {% endfor %}
     </div>
-    <a href="/login">Войти</a>
+    <div class="task_submit">
+        {{ form.submit(class="btn btn-primary btn-lg") }}
+        <a href="/login">Войти</a>
+    </div>
   </form>
 </div>
 {% endblock %}

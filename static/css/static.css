@@ -131,7 +131,7 @@ button img {
     margin-left: 45px;
     list-style: none;
     white-space: nowrap;
-    overflow-y: scroll;
+    overflow-x: scroll;
     overflow: hidden;
 }
 
@@ -184,8 +184,21 @@ input {
     margin-top: 20px;
 }
 
+.task_submit a {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    border-bottom: 2px solid #8a272a;
+    background: none;
+}
+
 .add_task span {
   color: #8a272a;
   margin-left: 270px;
   white-space: nowrap
+}
+
+.message {
+    margin-top: 10px;
+    color: #8a272a;
 }

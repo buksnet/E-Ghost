@@ -1,45 +1,47 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Login
+Login
 {% endblock %}
 
 {% block content %}
 <div class="navbar">
-  <h1>Вход</h1>
-  <hr>
-  {% for flash in get_flashed_messages() %}
-    <span> {{ flash }} </span>
-  {% endfor %}
-  <form action="" method="post">
-    {{ form.csrf_token }}
-      <div class="form-group">
-        <label>
-          {{ form.login.label }}
-        </label>
-        {{ form.login(class="form-control") }}
-      </div>
-      {% for error in form.login.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
+    <h1>Вход</h1>
+    <hr>
+    <form action="" method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>
+                {{ form.login.label }}
+            </label>
+            {{ form.login(class="form-control") }}
         </div>
-      {% endfor %}
+        {% for error in form.login.errors %}
+        <div class="alert alert-danger" role="alert">
+            <span>{{ error }}</span>
+        </div>
+        {% endfor %}
 
-      <div class="form-group">
-        <label>
-          {{ form.password.label }}
-        </label>
-        {{ form.password(class="form-control") }}
-      </div>
-      {% for error in form.password.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
+        <div class="form-group">
+            <label>
+                {{ form.password.label }}
+            </label>
+            {{ form.password(class="form-control") }}
         </div>
-      {% endfor %}
-    <div class="task_submit">
-        {{ form.submit(class="btn btn-primary btn-lg") }}
-    </div>
-    <a href="/registration">Регистрация</a>
-  </form>
+        {% for error in form.password.errors %}
+        <div class="alert alert-danger" role="alert">
+            <span>{{ error }}</span>
+        </div>
+        {% endfor %}
+        <div class="message">
+            {% for flash in get_flashed_messages() %}
+                <span> {{ flash }} </span>
+            {% endfor %}
+        </div>
+        <div class="task_submit">
+            {{ form.submit(class="btn btn-primary btn-lg") }}
+            <a href="/registration">Регистрация</a>
+        </div>
+    </form>
 </div>
 {% endblock %}

@@ -11,7 +11,7 @@
                 <form action="/task/{{task.id}}">
                     <button type="submit">
                         <div class="image"><img src="static/images/profile_icon.png" alt="profile image"></div>
-                        <div class="name">{{ task.name }}</div>
+                        <div class="name">{{ task.name|truncate(15) }}</div>
                         <div class="text">{{ task.text|truncate(10) }}</div>
                         <div class="date">{{ task.date }}</div>
                     </button>
